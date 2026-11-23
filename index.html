@@ -1,0 +1,2732 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>
+      VibeCode Rescue — From AI-generated prototype to production-ready software
+    </title>
+    <meta
+      name="description"
+      content="Independent human technical review for AI-built applications. Understand code quality, security, database risks and launch readiness with VibeCode Rescue."
+    />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://vibecodingrescue.netlify.app/" />
+    <meta
+      property="og:title"
+      content="VibeCode Rescue — Independent human review for AI-built apps"
+    />
+    <meta
+      property="og:description"
+      content="AI built your app. Has an experienced developer reviewed it? Get an independent Health Check, clear findings and practical recommendations."
+    />
+    <meta
+      property="og:image"
+      content="https://vibecodingrescue.netlify.app/assets/social-preview.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="VibeCode Rescue — Independent review for AI-built apps"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="VibeCode Rescue — Independent human review for AI-built apps"
+    />
+    <meta
+      name="twitter:description"
+      content="Independent human technical review for AI-built apps. Clear findings, prioritised risks and practical recommendations."
+    />
+    <meta
+      name="twitter:image"
+      content="https://vibecodingrescue.netlify.app/assets/social-preview.jpg"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="VibeCode Rescue — Independent review for AI-built apps"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": ["Organization", "ProfessionalService"],
+        "name": "VibeCode Rescue",
+        "url": "https://vibecodingrescue.netlify.app/",
+        "logo": "https://vibecodingrescue.netlify.app/assets/favicon.svg",
+        "image": "https://vibecodingrescue.netlify.app/assets/founder-photo.webp",
+        "email": "danitiestech@gmail.com",
+        "telephone": "+2347035545177",
+        "founder": {
+          "@type": "Person",
+          "name": "Danities Ichaba",
+          "sameAs": "https://www.linkedin.com/in/danities-ichaba-50a806171/"
+        }
+      }
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+    />
+    <style>
+      :root {
+        --bg: #101d2e;
+        --bg2: #152338;
+        --tx: #f6f4ee;
+        --mu: #b5c0cd;
+        --ac: #dfbf7d;
+        --line: #ffffff26;
+        --paper: #f4f1e9;
+        --ink: #172638;
+        --ink-mu: #506071;
+        --radius: 5px;
+        color-scheme: dark;
+        font-synthesis: none;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 95px;
+      }
+      body {
+        background: var(--bg);
+        color: var(--tx);
+        font:
+          400 16px/1.7 "DM Sans",
+          sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      button,
+      input,
+      textarea,
+      select {
+        font: inherit;
+      }
+      button,
+      a,
+      input,
+      textarea,
+      select,
+      summary {
+        -webkit-tap-highlight-color: transparent;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      a,
+      button {
+        touch-action: manipulation;
+      }
+      :focus-visible {
+        outline: 3px solid var(--ac);
+        outline-offset: 5px;
+      }
+      .w {
+        width: min(1200px, 100% - 96px);
+        margin-inline: auto;
+      }
+      section {
+        padding: 112px 0;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: Manrope, sans-serif;
+        font-weight: 600;
+        line-height: 1.2;
+        letter-spacing: -0.045em;
+      }
+      h2 {
+        font-size: clamp(30px, 3.5vw, 46px);
+      }
+      h3 {
+        font-size: 24px;
+      }
+      p {
+        overflow-wrap: break-word;
+      }
+      .eyebrow,
+      .mini-label {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.13em;
+        line-height: 1.6;
+      }
+      .eyebrow {
+        display: block;
+        text-transform: uppercase;
+        color: var(--ac);
+        margin-bottom: 24px;
+      }
+      .mini-label {
+        display: block;
+      }
+      .lead {
+        font-size: 17px;
+        line-height: 1.8;
+        color: var(--mu);
+        max-width: 570px;
+      }
+      .btn {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+        min-height: 48px;
+        padding: 13px 21px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        color: var(--tx);
+        background: transparent;
+        font-size: 13px;
+        font-weight: 700;
+        line-height: 1.5;
+        cursor: pointer;
+        transition:
+          background 0.18s,
+          transform 0.18s;
+      }
+      .btn:hover {
+        background: #ffffff0b;
+        transform: translateY(-2px);
+      }
+      .btn.p {
+        background: var(--ac);
+        color: var(--ink);
+        border-color: var(--ac);
+      }
+      .btn.p:hover {
+        background: #ecd19b;
+        border-color: #ecd19b;
+      }
+      .btn:active {
+        transform: translateY(0);
+      }
+      .text-btn {
+        padding-inline: 10px;
+        border-color: transparent;
+      }
+      .inline-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 18px;
+        font-size: 13px;
+        font-weight: 700;
+        padding-block: 8px;
+        border-bottom: 1px solid currentColor;
+      }
+      .inline-link:hover {
+        color: var(--ac);
+      }
+      .cta {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 30px;
+      }
+      .skip {
+        position: fixed;
+        top: -100px;
+        left: 16px;
+        z-index: 50;
+        background: var(--paper);
+        color: var(--ink);
+        padding: 12px;
+      }
+      .skip:focus {
+        top: 12px;
+      }
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        border-bottom: 1px solid var(--line);
+        background: #101d2ef5;
+        backdrop-filter: blur(12px);
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        min-height: 82px;
+      }
+      .logo {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--tx);
+        font:
+          700 19px Manrope,
+          sans-serif;
+        letter-spacing: -0.055em;
+        white-space: nowrap;
+      }
+      .logo i {
+        color: var(--ac);
+        border: 1px solid #dfbf7d66;
+        display: grid;
+        place-items: center;
+        width: 33px;
+        height: 33px;
+        border-radius: 4px;
+        font: 500 12px monospace;
+        letter-spacing: -0.1em;
+      }
+      .links {
+        display: flex;
+        gap: 25px;
+        color: var(--mu);
+        font-size: 12px;
+      }
+      .links a {
+        padding-block: 12px;
+      }
+      .links a:hover {
+        color: var(--ac);
+      }
+      .nav .btn {
+        font-size: 12px;
+        min-height: 42px;
+        padding: 10px 16px;
+      }
+      .hero {
+        padding: 92px 0 0;
+        overflow: hidden;
+      }
+      .hero .g {
+        display: grid;
+        grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.85fr);
+        gap: 75px;
+        align-items: center;
+      }
+      .hero .eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 10px;
+      }
+      .line-mark {
+        display: inline-block;
+        width: 24px;
+        height: 1px;
+        background: var(--ac);
+      }
+      h1 {
+        font-size: clamp(38px, 4.45vw, 62px);
+        font-weight: 500;
+        line-height: 1.13;
+        letter-spacing: -0.055em;
+      }
+      h1 span {
+        color: var(--ac);
+      }
+      .hero .lead {
+        margin-top: 25px;
+        font-size: 16px;
+        max-width: 550px;
+      }
+      .reassurance {
+        font-size: 11px;
+        color: var(--mu);
+        margin-top: 22px;
+      }
+      .platform-note {
+        font-size: 12px;
+        color: var(--mu);
+        max-width: 470px;
+        margin-top: 30px;
+      }
+      .platform-note strong {
+        color: var(--tx);
+        font-weight: 500;
+      }
+      .hero-foot {
+        display: flex;
+        justify-content: space-between;
+        gap: 24px;
+        border-top: 1px solid var(--line);
+        margin-top: 70px;
+        padding: 24px 0;
+        color: var(--mu);
+        font-size: 11px;
+      }
+      .hero-foot a {
+        color: var(--tx);
+      }
+      .hero-foot a:hover {
+        color: var(--ac);
+      }
+      .review-note {
+        background: var(--paper);
+        color: var(--ink);
+        padding: 32px;
+        position: relative;
+        border-radius: 2px;
+        box-shadow: 12px 14px 0 #ffffff05;
+        transform: rotate(1.5deg);
+      }
+      .review-note:before {
+        content: "";
+        position: absolute;
+        inset: 10px -10px -10px 10px;
+        border: 1px solid #dfbf7d55;
+        z-index: -1;
+      }
+      .paper-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        border-bottom: 1px solid #17263826;
+        padding-bottom: 21px;
+      }
+      .paper-top .mini-label {
+        font-size: 9px;
+      }
+      .paper-symbol {
+        font-size: 25px;
+      }
+      .review-note h2 {
+        font-size: 30px;
+        margin-top: 28px;
+      }
+      .review-note > p {
+        font-size: 12px;
+        color: var(--ink-mu);
+        margin-top: 12px;
+      }
+      .review-index {
+        list-style: none;
+        padding: 0;
+        margin: 27px 0;
+      }
+      .review-index li {
+        display: flex;
+        gap: 18px;
+        border-bottom: 1px solid #1726381c;
+        padding: 13px 0;
+        font-size: 12px;
+      }
+      .review-index li span {
+        font-size: 10px;
+        color: #82704b;
+      }
+      .paper-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        font-size: 11px;
+        color: var(--ink-mu);
+        padding-top: 8px;
+      }
+      .section-heading {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        align-items: end;
+        gap: 100px;
+        margin-bottom: 58px;
+      }
+      .section-heading .lead {
+        font-size: 16px;
+      }
+      .review-areas {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 64px;
+      }
+      .review-area {
+        display: flex;
+        gap: 22px;
+        padding: 30px 0;
+        border-top: 1px solid var(--line);
+      }
+      .area-number {
+        font-size: 11px;
+        color: var(--ac);
+        padding-top: 3px;
+        font-variant-numeric: tabular-nums;
+      }
+      .review-area h3 {
+        font-size: 18px;
+        letter-spacing: -0.025em;
+        margin-bottom: 10px;
+      }
+      .review-area p {
+        font-size: 14px;
+        color: var(--mu);
+      }
+      .report-delivery {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 90px;
+        background: var(--bg2);
+        padding: 40px;
+        margin-top: 30px;
+        border-left: 2px solid var(--ac);
+      }
+      .report-delivery .eyebrow {
+        margin-bottom: 10px;
+      }
+      .report-delivery h3 {
+        font-size: 29px;
+      }
+      .report-delivery p {
+        color: var(--mu);
+        font-size: 14px;
+        margin-top: 15px;
+      }
+      .report-delivery .mini-label {
+        margin: 0;
+        font-size: 9px;
+        color: var(--tx);
+      }
+      .severity {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 13px;
+      }
+      .severity span {
+        font-size: 10px;
+        border: 1px solid #ffffff40;
+        padding: 3px 10px;
+        border-radius: 2px;
+      }
+      .severity span:first-child {
+        border-color: #d99b93;
+        color: #efb3ab;
+      }
+      .severity span:nth-child(2) {
+        color: #efc28e;
+      }
+      .severity span:nth-child(3) {
+        color: #e5d39d;
+      }
+      .severity span:last-child {
+        color: #b3cfbd;
+      }
+      .report-delivery p.disc {
+        font-size: 11px;
+        line-height: 1.7;
+      }
+      .section-action {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 25px;
+        margin-top: 32px;
+      }
+      .section-action > span {
+        font-size: 11px;
+        color: var(--mu);
+      }
+      .alt {
+        background: var(--paper);
+        color: var(--ink);
+        --mu: var(--ink-mu);
+        --line: #17263826;
+      }
+      .alt .eyebrow {
+        color: #806337;
+      }
+      .alt .btn {
+        color: var(--ink);
+        border-color: #17263866;
+      }
+      .alt .btn:hover {
+        background: #1726380a;
+      }
+      .alt .inline-link:hover {
+        color: #806337;
+      }
+      .comparison-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 85px;
+        align-items: start;
+      }
+      .comparison-layout h2 {
+        font-size: clamp(29px, 3vw, 39px);
+      }
+      .comparison-layout .lead {
+        margin-top: 25px;
+        font-size: 15px;
+      }
+      .comparison {
+        display: grid;
+        grid-template-columns: 1fr 1.1fr;
+        gap: 30px;
+      }
+      .comparison > div {
+        border-top: 2px solid #17263840;
+        padding-top: 22px;
+      }
+      .comparison > div:last-child {
+        border-color: #947648;
+      }
+      .comparison .mini-label {
+        font-size: 9px;
+        color: var(--ink-mu);
+      }
+      .comparison h3 {
+        font-size: 21px;
+        margin: 17px 0 22px;
+      }
+      .comparison ul {
+        list-style: none;
+        padding: 0;
+        color: var(--ink-mu);
+        font-size: 12px;
+      }
+      .comparison li {
+        border-top: 1px solid #17263818;
+        padding: 10px 0;
+      }
+      .tog {
+        display: inline-flex;
+        gap: 4px;
+        border: 1px solid var(--line);
+        padding: 3px;
+        border-radius: 4px;
+        margin-bottom: 28px;
+      }
+      .tog button {
+        background: transparent;
+        border: 0;
+        border-radius: 2px;
+        padding: 8px 14px;
+        font-size: 11px;
+        color: var(--mu);
+        cursor: pointer;
+        min-height: 34px;
+      }
+      .tog button.on {
+        background: var(--paper);
+        color: var(--ink);
+      }
+      .flagship {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 90px;
+        border: 1px solid #dfbf7d80;
+        padding: 50px;
+        background: var(--bg2);
+      }
+      .flagship .eyebrow {
+        margin-bottom: 17px;
+      }
+      .flagship h3 {
+        font-size: 40px;
+      }
+      .flagship p {
+        font-size: 14px;
+        color: var(--mu);
+        margin-top: 20px;
+      }
+      .amt {
+        font-family: Manrope, sans-serif;
+        font-size: 31px;
+        font-weight: 600;
+        letter-spacing: -0.04em;
+        margin: 25px 0 20px;
+        line-height: 1.4;
+        white-space: nowrap;
+      }
+      .amt small {
+        font:
+          400 11px "DM Sans",
+          sans-serif;
+        color: var(--mu);
+        letter-spacing: 0;
+      }
+      .flagship-details {
+        padding-top: 5px;
+      }
+      .flagship-details .mini-label {
+        color: var(--ac);
+        font-size: 10px;
+      }
+      .flagship ul {
+        padding: 0;
+        list-style: none;
+        margin: 22px 0;
+      }
+      .flagship li {
+        font-size: 14px;
+        border-bottom: 1px solid var(--line);
+        padding: 11px 0 11px 24px;
+        position: relative;
+      }
+      .flagship li:before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: var(--ac);
+      }
+      .flagship .disc {
+        font-size: 11px;
+        max-width: 380px;
+      }
+      .service-row {
+        display: grid;
+        grid-template-columns: 26px 1fr 220px;
+        gap: 32px;
+        padding: 36px 0;
+        border-bottom: 1px solid var(--line);
+        align-items: start;
+      }
+      .service-row h3 {
+        font-size: 23px;
+        margin-bottom: 13px;
+      }
+      .service-row p {
+        font-size: 14px;
+        color: var(--mu);
+        max-width: 570px;
+      }
+      .service-row p.service-detail {
+        font-size: 11px;
+        margin-top: 15px;
+      }
+      .service-row .amt {
+        font-size: 26px;
+        margin: 0 0 10px;
+      }
+      .service-row .amt small {
+        display: block;
+        margin-top: 4px;
+      }
+      .service-row > div:last-child {
+        justify-self: end;
+        min-width: 180px;
+      }
+      .note {
+        color: var(--mu);
+        font-size: 11px;
+        margin-top: 26px;
+        max-width: 810px;
+      }
+      .risk {
+        color: var(--ac);
+        font-size: 12px;
+        margin-top: 15px;
+      }
+      .grid {
+        display: grid;
+        gap: 24px;
+      }
+      .g2 {
+        grid-template-columns: 1fr 1fr;
+      }
+      .g4 {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      .process-grid {
+        margin-top: 55px;
+        gap: 35px;
+      }
+      .step {
+        border-top: 1px solid #17263840;
+        padding-top: 20px;
+      }
+      .step .n {
+        font-size: 12px;
+        color: #806337;
+      }
+      .step h3 {
+        font-size: 19px;
+        margin: 24px 0 15px;
+        letter-spacing: -0.03em;
+      }
+      .step p {
+        font-size: 13px;
+        color: var(--ink-mu);
+      }
+      .process-note {
+        font-size: 12px;
+        color: var(--ink-mu);
+        border-top: 1px solid #17263826;
+        margin-top: 40px;
+        padding-top: 20px;
+      }
+      .case {
+        margin-top: 35px;
+      }
+      .case h3 {
+        font-size: 36px;
+      }
+      .case p {
+        color: var(--mu);
+        font-size: 14px;
+      }
+      .case-heading {
+        display: flex;
+        justify-content: space-between;
+        gap: 35px;
+        align-items: center;
+      }
+      .case-heading .eyebrow {
+        font-size: 10px;
+        margin-bottom: 15px;
+      }
+      .case-heading p {
+        margin-top: 15px;
+        max-width: 550px;
+      }
+      .adino {
+        padding: 40px;
+        border: 1px solid var(--line);
+        background: var(--bg2);
+      }
+      .case-heading > .inline-link {
+        flex-shrink: 0;
+      }
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 25px;
+      }
+      .tags span {
+        font-size: 10px;
+        border: 1px solid var(--line);
+        padding: 4px 9px;
+        border-radius: 2px;
+        color: var(--mu);
+      }
+      .engineering-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 35px;
+        margin: 40px 0 28px;
+      }
+      .engineering-grid article {
+        border-top: 1px solid var(--line);
+        padding-top: 20px;
+      }
+      .engineering-grid .mini-label {
+        font-size: 8px;
+        color: var(--ac);
+      }
+      .engineering-grid h4 {
+        font-size: 20px;
+        margin: 16px 0;
+      }
+      .engineering-grid p {
+        font-size: 13px;
+      }
+      .engineering-grid .engineering-meaning {
+        font-size: 12px;
+        color: #d4dce4;
+        margin-top: 20px;
+      }
+      .file-type {
+        font-size: 10px;
+        color: var(--ac);
+      }
+      .drive {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        border: 1px solid var(--line);
+      }
+      .drive-image {
+        background: #dce5e7;
+        padding: 30px 35px 0;
+        height: 365px;
+        overflow: hidden;
+      }
+      .drive-image img {
+        width: 100%;
+        height: auto;
+        box-shadow: 0 10px 25px #17263830;
+      }
+      .drive-copy {
+        padding: 40px;
+      }
+      .drive-copy .eyebrow {
+        font-size: 10px;
+        margin-bottom: 15px;
+      }
+      .drive-copy > p {
+        margin-top: 18px;
+      }
+      .drive-copy .engineering-meaning {
+        font-size: 12px;
+      }
+      .drive-copy .inline-link {
+        margin-top: 20px;
+      }
+      .founder {
+        display: grid;
+        grid-template-columns: 0.7fr 1.3fr;
+        gap: 85px;
+        align-items: center;
+      }
+      .founder-photo {
+        align-self: start;
+      }
+      .founder img {
+        width: 100%;
+        height: auto;
+        border-radius: 2px;
+      }
+      .photo-caption {
+        padding: 20px 0;
+        border-bottom: 1px solid #17263826;
+      }
+      .photo-caption strong {
+        display: block;
+        font:
+          600 18px Manrope,
+          sans-serif;
+        letter-spacing: -0.03em;
+      }
+      .photo-caption span {
+        font-size: 11px;
+        color: var(--ink-mu);
+      }
+      .founder h2 {
+        font-size: clamp(30px, 3.2vw, 42px);
+      }
+      .founder p {
+        font-size: 15px;
+        color: var(--ink-mu);
+        margin-top: 22px;
+      }
+      .founder .cta {
+        gap: 25px;
+      }
+      .faq-layout {
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 90px;
+      }
+      .faq-layout > .faq {
+        margin-top: 0;
+      }
+      .faq-layout .lead {
+        font-size: 14px;
+        margin: 22px 0 8px;
+      }
+      details {
+        border-bottom: 1px solid var(--line);
+        padding: 23px 0;
+      }
+      details:first-child {
+        border-top: 1px solid var(--line);
+      }
+      summary {
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        display: flex;
+        gap: 30px;
+        justify-content: space-between;
+        list-style: none;
+      }
+      summary::-webkit-details-marker {
+        display: none;
+      }
+      summary:after {
+        content: "+";
+        color: var(--ac);
+        flex-shrink: 0;
+        font-size: 20px;
+        line-height: 1.3;
+      }
+      details[open] summary:after {
+        content: "−";
+      }
+      details p {
+        font-size: 13px;
+        color: var(--mu);
+        margin-top: 16px;
+      }
+      .final {
+        background: var(--bg2);
+        border-top: 1px solid var(--line);
+      }
+      .final > .w > h2,
+      .final > .w > .lead,
+      .final > .w > .reply,
+      .final > .w > .risk {
+        text-align: center;
+        margin-inline: auto;
+        max-width: 780px;
+      }
+      .final h2 {
+        font-size: clamp(32px, 4vw, 51px);
+      }
+      .final > .w > .lead {
+        font-size: 16px;
+        margin-top: 24px;
+        max-width: 580px;
+      }
+      .final > .w > .cta {
+        justify-content: center;
+      }
+      .reply {
+        color: var(--mu);
+        font-size: 11px;
+        margin-top: 20px;
+      }
+      .final .risk {
+        font-size: 11px;
+      }
+      .intake {
+        background: var(--bg);
+        border: 1px solid var(--line);
+        padding: 40px;
+        max-width: 740px;
+        margin: 45px auto 0;
+        border-radius: 4px;
+      }
+      .intake .eyebrow {
+        font-size: 10px;
+        margin-bottom: 10px;
+      }
+      .intake h3 {
+        font-size: 29px;
+      }
+      .form-intro {
+        font-size: 13px;
+        color: var(--mu);
+        margin: 15px 0 30px;
+      }
+      .field {
+        display: flex;
+        flex-direction: column;
+        gap: 9px;
+        margin-bottom: 22px;
+        min-width: 0;
+      }
+      .field label {
+        font-size: 12px;
+        font-weight: 500;
+      }
+      .field input,
+      .field textarea,
+      .field select {
+        width: 100%;
+        min-height: 47px;
+        padding: 12px;
+        border: 1px solid #7c889a;
+        background: var(--bg2);
+        border-radius: 3px;
+        color: var(--tx);
+        font-size: 14px;
+      }
+      .field input::placeholder {
+        color: #b0bdcb;
+      }
+      .field textarea {
+        resize: vertical;
+        min-height: 120px;
+      }
+      .field select {
+        cursor: pointer;
+      }
+      .field input[type="file"] {
+        font-size: 12px;
+        padding: 10px;
+      }
+      .field input::file-selector-button {
+        border: 0;
+        background: var(--paper);
+        color: var(--ink);
+        padding: 5px 9px;
+        margin-right: 10px;
+        border-radius: 2px;
+      }
+      .field small {
+        color: var(--mu);
+        font-size: 11px;
+      }
+      .disc {
+        font-size: 11px;
+        color: var(--mu);
+      }
+      .hidden {
+        display: none;
+      }
+      .intake .btn {
+        width: 100%;
+      }
+      .intake button:disabled {
+        opacity: 0.6;
+        cursor: wait;
+        transform: none;
+      }
+      .form-status {
+        font-size: 13px;
+        color: #b8d8c1;
+        margin-top: 15px;
+        white-space: pre-line;
+      }
+      .form-status:empty {
+        margin: 0;
+      }
+      .form-status.error {
+        color: #ffc2b6;
+      }
+      .needs {
+        font-size: 11px;
+        color: var(--mu);
+        max-width: 700px;
+        margin: 22px auto 0;
+        text-align: center;
+      }
+      .needs strong {
+        color: var(--tx);
+      }
+      footer {
+        padding: 65px 0 25px;
+        border-top: 1px solid var(--line);
+      }
+      .fg {
+        display: grid;
+        grid-template-columns: 1.5fr 0.8fr 1fr 1fr;
+        gap: 45px;
+        font-size: 12px;
+        color: var(--mu);
+      }
+      footer h5 {
+        color: var(--tx);
+        font-size: 11px;
+        margin-bottom: 15px;
+      }
+      footer a:not(.logo) {
+        display: block;
+        padding: 5px 0;
+      }
+      footer a:hover {
+        color: var(--ac);
+      }
+      footer .logo {
+        font-size: 17px;
+      }
+      footer .fg > div:first-child p {
+        font-size: 12px !important;
+      }
+      .copy {
+        border-top: 1px solid var(--line);
+        margin-top: 50px;
+        padding-top: 25px;
+        font-size: 10px;
+        color: var(--mu);
+      }
+      @media (min-width: 1500px) {
+        .hero {
+          padding-top: 110px;
+        }
+        .hero h1 {
+          font-size: 65px;
+        }
+      }
+      @media (max-width: 1100px) {
+        .w {
+          width: calc(100% - 64px);
+        }
+        .links {
+          gap: 15px;
+          font-size: 11px;
+        }
+        .hero .g {
+          gap: 42px;
+          grid-template-columns: 1.3fr 1fr;
+        }
+        h1 {
+          font-size: 45px;
+        }
+        .review-note {
+          padding: 25px;
+        }
+        .review-note h2 {
+          font-size: 26px;
+        }
+        .section-heading {
+          gap: 45px;
+        }
+        .comparison-layout {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+        .comparison-layout > div:first-child {
+          max-width: 650px;
+        }
+        .comparison {
+          gap: 45px;
+        }
+        .flagship {
+          gap: 45px;
+          padding: 35px;
+        }
+        .founder {
+          gap: 50px;
+        }
+        .fg {
+          gap: 25px;
+        }
+        .nav .btn {
+          gap: 8px;
+        }
+        .logo {
+          font-size: 17px;
+        }
+      }
+      @media (max-width: 850px) {
+        section {
+          padding: 80px 0;
+        }
+        .links {
+          display: none;
+        }
+        .hero {
+          padding-top: 65px;
+        }
+        .hero .g {
+          grid-template-columns: 1fr 0.85fr;
+          gap: 30px;
+        }
+        h1 {
+          font-size: 38px;
+        }
+        .hero .lead {
+          font-size: 14px;
+        }
+        .review-note {
+          padding: 20px;
+          transform: none;
+        }
+        .review-note h2 {
+          font-size: 24px;
+        }
+        .review-index li {
+          font-size: 10px;
+          gap: 12px;
+        }
+        .paper-top .mini-label {
+          font-size: 8px;
+        }
+        .paper-bottom {
+          font-size: 10px;
+        }
+        .hero .cta {
+          gap: 10px;
+        }
+        .hero .btn {
+          font-size: 11px;
+          padding: 12px;
+          gap: 12px;
+        }
+        .reassurance {
+          font-size: 10px;
+        }
+        .hero-foot {
+          margin-top: 45px;
+        }
+        .section-heading {
+          grid-template-columns: 1fr;
+          gap: 25px;
+          margin-bottom: 40px;
+        }
+        .report-delivery {
+          gap: 35px;
+          padding: 28px;
+        }
+        .service-row {
+          grid-template-columns: 20px 1fr 170px;
+          gap: 20px;
+        }
+        .service-row h3 {
+          font-size: 20px;
+        }
+        .service-row > div:last-child {
+          min-width: 0;
+        }
+        .service-row .amt {
+          font-size: 24px;
+        }
+        .process-grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 35px;
+        }
+        .engineering-grid {
+          grid-template-columns: 1fr;
+        }
+        .engineering-grid h4 {
+          margin: 10px 0;
+        }
+        .engineering-grid .mini-label {
+          font-size: 9px;
+        }
+        .engineering-grid .engineering-meaning {
+          margin-top: 10px;
+        }
+        .drive {
+          grid-template-columns: 0.8fr 1fr;
+        }
+        .drive-image {
+          padding: 25px 20px 0;
+          height: 100%;
+        }
+        .drive-copy {
+          padding: 30px;
+        }
+        .founder {
+          grid-template-columns: 0.7fr 1fr;
+          gap: 35px;
+        }
+        .founder p {
+          font-size: 14px;
+        }
+        .faq-layout {
+          grid-template-columns: 1fr;
+          gap: 35px;
+        }
+        .fg {
+          grid-template-columns: 1fr 1fr;
+          gap: 35px;
+        }
+        .fg > div:first-child {
+          order: -1;
+        }
+        .report-delivery h3 {
+          font-size: 25px;
+        }
+        .review-areas {
+          column-gap: 30px;
+        }
+      }
+      @media (max-width: 600px) {
+        .w {
+          width: calc(100% - 40px);
+        }
+        .nav {
+          min-height: 72px;
+          gap: 8px;
+        }
+        .nav .logo {
+          font-size: 14px;
+          gap: 7px;
+        }
+        .logo i {
+          height: 27px;
+          width: 27px;
+          font-size: 10px;
+        }
+        .nav .btn {
+          font-size: 10px;
+          padding: 10px;
+          min-height: 38px;
+        }
+        .hero {
+          padding-top: 45px;
+        }
+        .hero .g {
+          grid-template-columns: 1fr;
+          gap: 42px;
+        }
+        .hero h1 {
+          font-size: clamp(35px, 9vw, 49px);
+          max-width: 500px;
+        }
+        .hero .eyebrow {
+          font-size: 8px;
+          margin-bottom: 22px;
+          letter-spacing: 0.12em;
+        }
+        .hero .lead {
+          font-size: 15px;
+          line-height: 1.85;
+        }
+        .hero .btn {
+          font-size: 12px;
+          padding: 14px;
+        }
+        .hero .cta {
+          gap: 13px;
+        }
+        .reassurance {
+          font-size: 10px;
+        }
+        .platform-note {
+          font-size: 11px;
+          margin-top: 23px;
+        }
+        .review-note {
+          padding: 25px;
+          max-width: 440px;
+          width: calc(100% - 10px);
+        }
+        .review-note h2 {
+          font-size: 30px;
+        }
+        .review-index {
+          margin: 20px 0;
+        }
+        .review-index li {
+          font-size: 12px;
+        }
+        .paper-top .mini-label {
+          font-size: 9px;
+        }
+        .review-note:before {
+          inset: 7px -7px -7px 7px;
+        }
+        .hero-foot {
+          flex-direction: column;
+          gap: 10px;
+          font-size: 10px;
+          margin-top: 40px;
+          padding: 23px 0;
+        }
+        section {
+          padding: 65px 0;
+        }
+        h2 {
+          font-size: 33px;
+        }
+        .eyebrow {
+          font-size: 10px;
+          margin-bottom: 18px;
+        }
+        .lead {
+          font-size: 15px;
+        }
+        .section-heading .lead {
+          font-size: 15px;
+        }
+        .review-areas {
+          grid-template-columns: 1fr;
+        }
+        .review-area {
+          gap: 18px;
+          padding: 25px 0;
+        }
+        .review-area h3 {
+          font-size: 18px;
+        }
+        .review-area p {
+          font-size: 13px;
+        }
+        .report-delivery {
+          grid-template-columns: 1fr;
+          gap: 25px;
+          margin-top: 20px;
+          padding: 25px;
+        }
+        .report-delivery p {
+          font-size: 13px;
+        }
+        .section-action {
+          gap: 18px;
+          align-items: flex-start;
+          flex-direction: column;
+        }
+        .section-action > span {
+          font-size: 10px;
+        }
+        .comparison-layout {
+          gap: 35px;
+        }
+        .comparison {
+          gap: 20px;
+          grid-template-columns: 0.85fr 1.15fr;
+        }
+        .comparison h3 {
+          font-size: 18px;
+        }
+        .comparison .mini-label {
+          font-size: 8px;
+          letter-spacing: 0.07em;
+        }
+        .comparison li {
+          font-size: 11px;
+        }
+        .flagship {
+          grid-template-columns: 1fr;
+          gap: 35px;
+          padding: 27px;
+        }
+        .flagship h3 {
+          font-size: 35px;
+        }
+        .flagship p {
+          font-size: 13px;
+        }
+        .flagship .btn {
+          width: 100%;
+          font-size: 12px;
+        }
+        .flagship li {
+          font-size: 13px;
+        }
+        .flagship-details .mini-label {
+          font-size: 9px;
+        }
+        .amt {
+          font-size: 30px;
+        }
+        .service-row {
+          grid-template-columns: 19px 1fr;
+          gap: 15px;
+          padding: 28px 0;
+        }
+        .service-row > div:last-child {
+          grid-column: 2;
+          justify-self: start;
+        }
+        .service-row .amt {
+          margin: 5px 0 5px;
+        }
+        .service-row .amt small {
+          display: inline;
+        }
+        .service-row h3 {
+          font-size: 21px;
+        }
+        .service-row p {
+          font-size: 13px;
+        }
+        .service-row .inline-link {
+          font-size: 12px;
+        }
+        .risk {
+          font-size: 11px;
+        }
+        .process-grid {
+          grid-template-columns: 1fr;
+          gap: 28px;
+          margin-top: 35px;
+        }
+        .step {
+          display: grid;
+          grid-template-columns: 30px 1fr;
+          column-gap: 14px;
+        }
+        .step .n {
+          grid-row: 1/3;
+        }
+        .step h3 {
+          margin: 0 0 12px;
+          font-size: 20px;
+        }
+        .step p {
+          grid-column: 2;
+        }
+        .adino {
+          padding: 25px;
+        }
+        .case-heading {
+          display: block;
+        }
+        .case-heading > .inline-link {
+          margin-top: 18px;
+        }
+        .case h3 {
+          font-size: 30px;
+        }
+        .case p {
+          font-size: 13px;
+        }
+        .tags {
+          gap: 6px;
+          margin-top: 20px;
+        }
+        .tags span {
+          font-size: 9px;
+          padding: 3px 7px;
+        }
+        .engineering-grid {
+          gap: 27px;
+          margin: 28px 0;
+        }
+        .engineering-grid h4 {
+          font-size: 21px;
+        }
+        .case .btn {
+          font-size: 11px;
+          gap: 15px;
+          padding: 13px;
+        }
+        .drive {
+          grid-template-columns: 1fr;
+          margin-top: 25px;
+        }
+        .drive-image {
+          height: 280px;
+          padding: 25px 35px 0;
+        }
+        .drive-copy {
+          padding: 27px;
+        }
+        .founder {
+          grid-template-columns: 1fr;
+          gap: 35px;
+        }
+        .founder-photo {
+          max-width: 310px;
+        }
+        .founder h2 {
+          font-size: 32px;
+        }
+        .founder p {
+          font-size: 14px;
+        }
+        .faq-layout {
+          gap: 30px;
+        }
+        summary {
+          font-size: 13px;
+          gap: 22px;
+        }
+        .final h2 {
+          font-size: 32px;
+        }
+        .final > .w > .lead {
+          font-size: 14px;
+        }
+        .final > .w > .cta {
+          gap: 10px;
+        }
+        .final > .w > .cta .btn {
+          font-size: 11px;
+          gap: 15px;
+          padding: 12px;
+        }
+        .intake {
+          padding: 25px;
+          margin-top: 35px;
+        }
+        .intake h3 {
+          font-size: 26px;
+        }
+        .intake .g2 {
+          grid-template-columns: 1fr;
+          gap: 0;
+        }
+        .field input,
+        .field select,
+        .field textarea {
+          font-size: 16px;
+        }
+        .field label {
+          font-size: 12px;
+        }
+        .field input[type="file"] {
+          font-size: 10px;
+          padding: 10px 6px;
+        }
+        .field small {
+          font-size: 10px;
+        }
+        .needs {
+          font-size: 10px;
+        }
+        .reply {
+          font-size: 10px;
+        }
+        .final .risk {
+          font-size: 10px;
+        }
+        .fg {
+          column-gap: 20px;
+          row-gap: 30px;
+        }
+        .fg > div:first-child {
+          grid-column: 1/-1;
+        }
+        .fg > div:last-child {
+          grid-column: 1/-1;
+        }
+        .fg > div:last-child a {
+          display: inline-block;
+          margin-right: 16px;
+          font-size: 12px;
+        }
+        .copy {
+          margin-top: 30px;
+          font-size: 9px;
+        }
+        .text-btn {
+          border: 0;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        *,
+        *:before,
+        *:after {
+          animation: none !important;
+          transition: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <nav>
+      <div class="w nav">
+        <a class="logo" href="#top"><i>&lt;/&gt;</i>VibeCode Rescue</a>
+        <div class="links">
+          <a href="#problems">The Health Check</a
+          ><a href="#work">Selected work</a><a href="#process">How it works</a
+          ><a href="#faq">FAQ</a>
+        </div>
+        <a class="btn p" href="#contact">Get Your App Reviewed</a>
+      </div>
+    </nav>
+
+    <main id="main">
+      <header class="hero" id="top">
+        <div class="w g">
+          <div class="hero-copy">
+            <span class="eyebrow"
+              ><span class="line-mark"></span> Independent human technical
+              review</span
+            >
+            <h1>
+              AI built your app.<br /><span
+                >Has an experienced developer reviewed it?</span
+              >
+            </h1>
+            <p class="lead">
+              Your application may look great and work perfectly in a demo. But
+              hidden code issues, security weaknesses and database problems
+              could put your project at risk. Get an independent human technical
+              review before you launch.
+            </p>
+            <div class="cta">
+              <a class="btn p" href="#contact"
+                >Get Your App Reviewed <span aria-hidden="true">↗</span></a
+              ><a class="btn text-btn" href="#process"
+                >See How It Works <span aria-hidden="true">↓</span></a
+              >
+            </div>
+            <p class="reassurance">
+              Human expertise. Independent assessment. Practical
+              recommendations.
+            </p>
+            <p class="platform-note">
+              Built with <strong>Lovable</strong>, <strong>Bolt</strong>,
+              <strong>Replit</strong> or another AI coding tool? We can help.
+            </p>
+          </div>
+          <aside
+            class="review-note"
+            aria-label="What your technical review covers"
+          >
+            <div class="paper-top">
+              <span class="mini-label">VIBE CODE HEALTH CHECK</span
+              ><span class="paper-symbol" aria-hidden="true">↗</span>
+            </div>
+            <h2>A clearer picture.<br />A better next step.</h2>
+            <p>Know what’s beneath the interface.</p>
+            <ol class="review-index">
+              <li><span>01</span> Code &amp; architecture</li>
+              <li><span>02</span> Data &amp; access permissions</li>
+              <li><span>03</span> Security &amp; authentication</li>
+              <li><span>04</span> Reliability &amp; launch risks</li>
+            </ol>
+            <div class="paper-bottom">
+              <span>Reviewed by a human.<br />Explained in plain language.</span
+              ><svg
+                width="39"
+                height="44"
+                viewBox="0 0 39 44"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M19.5 2 36 9v12c0 10-16.5 20-16.5 20S3 31 3 21V9L19.5 2Z"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                />
+                <path
+                  d="m12 21 5 5 10-12"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                />
+              </svg>
+            </div>
+          </aside>
+        </div>
+        <div class="w hero-foot">
+          <span>From AI-generated prototype to production-ready software.</span
+          ><a href="#founder"
+            >Meet your developer <span aria-hidden="true">↗</span></a
+          >
+        </div>
+      </header>
+
+      <section id="problems">
+        <div class="w">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">01 / The Vibe Code Health Check</span>
+              <h2>Your App Works.<br />But Is It Built Right?</h2>
+            </div>
+            <p class="lead">
+              A working demo is a good start. An independent review helps you
+              understand the code, decisions and potential risks behind it —
+              before your business depends on it.
+            </p>
+          </div>
+          <div class="review-areas">
+            <article class="review-area">
+              <span class="area-number">01</span>
+              <div>
+                <h3>Code quality and structure</h3>
+                <p>
+                  Code organisation, maintainability, duplication and
+                  unnecessarily complex code.
+                </p>
+              </div>
+            </article>
+            <article class="review-area">
+              <span class="area-number">02</span>
+              <div>
+                <h3>Database and data integrity</h3>
+                <p>
+                  Database structure, relationships, data validation, access
+                  permissions and security policies.
+                </p>
+              </div>
+            </article>
+            <article class="review-area">
+              <span class="area-number">03</span>
+              <div>
+                <h3>Security and authentication</h3>
+                <p>
+                  Authentication, user permissions, exposed secrets, sensitive
+                  information and common security weaknesses.
+                </p>
+              </div>
+            </article>
+            <article class="review-area">
+              <span class="area-number">04</span>
+              <div>
+                <h3>Functionality and reliability</h3>
+                <p>
+                  Important workflows, form validation, error handling, edge
+                  cases and unexpected behaviour.
+                </p>
+              </div>
+            </article>
+            <article class="review-area">
+              <span class="area-number">05</span>
+              <div>
+                <h3>APIs and integrations</h3>
+                <p>
+                  API implementation, external service connections and how
+                  failures are handled.
+                </p>
+              </div>
+            </article>
+            <article class="review-area">
+              <span class="area-number">06</span>
+              <div>
+                <h3>Deployment and production readiness</h3>
+                <p>
+                  Environment configuration, deployment setup and risks that may
+                  only appear in production.
+                </p>
+              </div>
+            </article>
+          </div>
+          <div class="report-delivery">
+            <div>
+              <span class="eyebrow">What you take away</span>
+              <h3>Clarity you can act on.</h3>
+              <p>
+                An independent technical assessment with observed issues and
+                potential risks, clear explanations, prioritised recommendations
+                and suggested next steps.
+              </p>
+            </div>
+            <div class="report-outcome">
+              <p class="mini-label">FINDINGS CLASSIFIED BY SEVERITY</p>
+              <div class="severity">
+                <span>Critical</span><span>High</span><span>Medium</span
+                ><span>Low</span>
+              </div>
+              <p>
+                Your report explains what each finding means for your app and
+                what to address first.
+              </p>
+              <p class="disc">
+                The review identifies observed issues and risks within the
+                agreed scope. It is not a guarantee that every issue will be
+                found or that the app is completely secure or ready for
+                production.
+              </p>
+            </div>
+          </div>
+          <div class="section-action">
+            <a class="btn p" href="#contact"
+              >Get Your App Reviewed <span aria-hidden="true">↗</span></a
+            ><span
+              >From ₦25,000 · Final price depends on complexity and review
+              scope.</span
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="alt" id="help">
+        <div class="w comparison-layout">
+          <div>
+            <span class="eyebrow">A second perspective</span>
+            <h2>
+              Your AI Builder Can Generate Code. But Who Independently Checks
+              the Result?
+            </h2>
+            <p class="lead">
+              AI tools make building more accessible. Independent human
+              oversight gives you another perspective on what you’ve built.
+            </p>
+          </div>
+          <div class="comparison">
+            <div>
+              <span class="mini-label">YOUR AI CODING TOOLS</span>
+              <h3>Help you build.</h3>
+              <ul>
+                <li>Generate code</li>
+                <li>Suggest solutions</li>
+                <li>Help build features</li>
+                <li>Explain errors</li>
+              </ul>
+            </div>
+            <div>
+              <span class="mini-label">VIBECODE RESCUE</span>
+              <h3>Help you understand.</h3>
+              <ul>
+                <li>Independently review implementation</li>
+                <li>Investigate technical weaknesses</li>
+                <li>Evaluate application architecture</li>
+                <li>Identify potential security and reliability risks</li>
+                <li>Explain findings in plain language</li>
+                <li>Help implement improvements</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services">
+        <div class="w">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">02 / Services</span>
+              <h2>
+                Start with understanding.<br />Move forward with confidence.
+              </h2>
+            </div>
+            <p class="lead">
+              Choose a review, focused repairs or continued development. Scope,
+              access, cost and timing are agreed before work begins.
+            </p>
+          </div>
+          <div class="tog" role="group" aria-label="Currency">
+            <button type="button" class="on" id="bn" aria-pressed="true">
+              ₦ Naira</button
+            ><button type="button" id="bu" aria-pressed="false">
+              $ USD (indicative)
+            </button>
+          </div>
+          <article class="flagship price">
+            <div>
+              <span class="eyebrow">Our Flagship Service</span>
+              <h3>Vibe Code<br />Health Check</h3>
+              <p>
+                Get an independent technical assessment of your AI-built
+                application. Understand what works, what needs attention and
+                what should be improved before you launch.
+              </p>
+              <div class="amt">
+                <span class="pr" data-n="₦25,000" data-u="$25+">₦25,000</span>
+                <small>starting</small>
+              </div>
+              <a class="btn p" href="#contact"
+                >Get Your App Reviewed <span aria-hidden="true">↗</span></a
+              >
+            </div>
+            <div class="flagship-details">
+              <span class="mini-label">A HUMAN REVIEW. A PRACTICAL PLAN.</span>
+              <ul>
+                <li>Code structure and maintainability</li>
+                <li>Database, security and authentication review</li>
+                <li>Core workflows, APIs and integrations</li>
+                <li>Deployment and production risks</li>
+                <li>Technical report with severity-ranked findings</li>
+                <li>Plain-language explanations and prioritised next steps</li>
+              </ul>
+              <a class="inline-link" href="#problems"
+                >Explore the review scope <span aria-hidden="true">↑</span></a
+              >
+              <p class="disc">
+                You can take the recommendations to another developer, implement
+                them yourself or ask me to help. No repair package is required.
+              </p>
+            </div>
+          </article>
+          <div class="service-list">
+            <article class="service-row">
+              <span class="area-number">02</span>
+              <div>
+                <h3>Vibe Code Rescue</h3>
+                <p>
+                  Already identified a problem? We investigate and fix technical
+                  issues affecting your AI-built application.
+                </p>
+                <p class="service-detail">
+                  Broken features · Authentication · Databases · APIs · Payments
+                  · Deployment · Performance
+                </p>
+              </div>
+              <div>
+                <div class="amt">
+                  <span class="pr" data-n="₦75,000" data-u="$100+">₦75,000</span
+                  ><small> starting</small>
+                </div>
+                <a
+                  class="inline-link"
+                  href="#contact"
+                  data-service="Fixing an existing problem"
+                  >Discuss your app <span aria-hidden="true">↗</span></a
+                >
+              </div>
+            </article>
+            <article class="service-row">
+              <span class="area-number">03</span>
+              <div>
+                <h3>MVP Completion and Improvement</h3>
+                <p>
+                  Turn your AI-generated prototype into a more complete,
+                  reliable application. Get help implementing missing features,
+                  improving existing functionality and preparing for launch.
+                </p>
+                <p class="service-detail">
+                  Missing features · Backend improvements · Integrations ·
+                  Deployment assistance · Functional testing
+                </p>
+              </div>
+              <div>
+                <div class="amt">
+                  <span class="pr" data-n="₦150,000" data-u="$300+"
+                    >₦150,000</span
+                  ><small> starting</small>
+                </div>
+                <a
+                  class="inline-link"
+                  href="#contact"
+                  data-service="Completing or improving an application"
+                  >Discuss your app <span aria-hidden="true">↗</span></a
+                >
+              </div>
+            </article>
+            <article class="service-row">
+              <span class="area-number">04</span>
+              <div>
+                <h3>Ongoing Technical Support</h3>
+                <p>
+                  Get continued technical assistance as your application grows.
+                  We help investigate issues, review changes and maintain your
+                  application.
+                </p>
+                <p class="service-detail">
+                  Agreed fixes and small improvements · Deployment support ·
+                  Consultations · Monthly progress reports
+                </p>
+              </div>
+              <div>
+                <div class="amt">
+                  <span class="pr" data-n="₦100,000" data-u="$200+"
+                    >₦100,000</span
+                  ><small> / month, from</small>
+                </div>
+                <a
+                  class="inline-link"
+                  href="#contact"
+                  data-service="General technical advice"
+                  >Discuss support <span aria-hidden="true">↗</span></a
+                >
+              </div>
+            </article>
+          </div>
+          <p class="note">
+            All prices are starting prices. Final costs and timelines depend on
+            scope and complexity. Monthly support covers agreed work, with a
+            schedule and limits confirmed in advance. USD figures are
+            indicative, not a live exchange rate.
+          </p>
+          <p class="risk">
+            Health Check fee credited toward Rescue · 30-day warranty on
+            delivered fixes.
+          </p>
+        </div>
+      </section>
+
+      <section class="alt" id="process">
+        <div class="w">
+          <span class="eyebrow">03 / How it works</span>
+          <h2>A clear process.<br />You stay in control.</h2>
+          <div class="grid g4 process-grid">
+            <article class="step">
+              <span class="n">01</span>
+              <h3>Tell Us About Your App</h3>
+              <p>
+                Share your application URL, AI coding platform and what you want
+                reviewed. No technical explanation needed.
+              </p>
+            </article>
+            <article class="step">
+              <span class="n">02</span>
+              <h3>We Review Your Application</h3>
+              <p>
+                We agree on access and scope, then I inspect the relevant parts
+                of your application.
+              </p>
+            </article>
+            <article class="step">
+              <span class="n">03</span>
+              <h3>Receive Your Technical Report</h3>
+              <p>
+                I explain the findings, highlight potential risks and recommend
+                what to address first.
+              </p>
+            </article>
+            <article class="step">
+              <span class="n">04</span>
+              <h3>Decide What Happens Next</h3>
+              <p>
+                Implement the recommendations independently or engage VibeCode
+                Rescue for fixes and improvements. The choice is yours.
+              </p>
+            </article>
+          </div>
+          <p class="process-note">
+            Start with a preview link. For a deeper review, we agree on limited,
+            appropriate access to code and configuration before work begins.
+          </p>
+        </div>
+      </section>
+
+      <section id="work">
+        <div class="w">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">04 / Selected engineering work</span>
+              <h2>Real applications.<br />Hands-on experience.</h2>
+            </div>
+            <p class="lead">
+              These are products I’ve built and worked on — practical evidence
+              of the engineering behind VibeCode Rescue.
+            </p>
+          </div>
+          <article class="case adino">
+            <div class="case-heading">
+              <div>
+                <span class="eyebrow">01 / Offline-first retail software</span>
+                <h3>Adino POS</h3>
+                <p>
+                  An offline-first POS and inventory management application
+                  built for Nigerian retailers.
+                </p>
+              </div>
+              <a
+                class="inline-link"
+                href="https://adinopos.com"
+                target="_blank"
+                rel="noopener"
+                >Visit Adino POS <span aria-hidden="true">↗</span></a
+              >
+            </div>
+            <div class="tags">
+              <span>React</span><span>TypeScript</span><span>Node.js</span
+              ><span>Express</span><span>PostgreSQL</span><span>IndexedDB</span
+              ><span>KudiSMS</span>
+            </div>
+            <div class="engineering-grid">
+              <article>
+                <span class="mini-label">01 / OFFLINE SYNCHRONISATION</span>
+                <h4>Keep offline work moving.</h4>
+                <p>
+                  I fixed sync queue race conditions, made repeatedly failing
+                  items visible and moved authentication tokens into IndexedDB.
+                  I also added offline credit sales and cleaned up the relevant
+                  schema.
+                </p>
+                <p class="engineering-meaning">
+                  Why it matters: offline sales and sync failures need
+                  deliberate handling, even when the interface looks fine.
+                </p>
+              </article>
+              <article>
+                <span class="mini-label">02 / PHONE-FIRST AUTHENTICATION</span>
+                <h4>Design login for real users.</h4>
+                <p>
+                  I implemented SMS OTP with KudiSMS and phone verification,
+                  enabled owners to invite cashiers and managers by phone, and
+                  supported login by phone number or email.
+                </p>
+                <p class="engineering-meaning">
+                  Why it matters: staff can access the application without
+                  relying on an email account.
+                </p>
+              </article>
+              <article>
+                <span class="mini-label">03 / STOCK ACCURACY</span>
+                <h4>Show changes at the till.</h4>
+                <p>
+                  I implemented optimistic stock updates and updated the
+                  sales-page product state immediately after a sale, including
+                  while offline.
+                </p>
+                <p class="engineering-meaning">
+                  Why it matters: stock visibility should reflect the sale
+                  without waiting for a server connection.
+                </p>
+              </article>
+            </div>
+            <a class="btn" href="/assets/adino-pos-case-study.pdf" download
+              >Read the full case study <span class="file-type">PDF ↓</span></a
+            >
+          </article>
+          <article class="case drive">
+            <div class="drive-image">
+              <img
+                src="/assets/drivemasterng-screenshot.webp"
+                width="1000"
+                height="1447"
+                alt="DriveMasterNG website showing its driving school management software"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="drive-copy">
+              <span class="eyebrow">02 / Driving school management</span>
+              <h3>DriveMasterNG</h3>
+              <p>
+                An offline-first driving school management application, bringing
+                student management, scheduling, payments and role-based access
+                into one product.
+              </p>
+              <div class="tags">
+                <span>React</span><span>TypeScript</span><span>Vite</span
+                ><span>Dexie</span><span>PWA</span><span>Node.js</span
+                ><span>Express</span><span>PostgreSQL</span>
+              </div>
+              <p class="engineering-meaning">
+                Practical work across offline data, operational workflows and
+                user permissions.
+              </p>
+              <a
+                class="inline-link"
+                href="https://drivemaster-silk.vercel.app/"
+                target="_blank"
+                rel="noopener"
+                >Explore DriveMasterNG <span aria-hidden="true">↗</span></a
+              >
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="alt" id="founder">
+        <div class="w founder">
+          <div class="founder-photo">
+            <img
+              src="/assets/founder-photo.webp"
+              width="640"
+              height="650"
+              loading="lazy"
+              decoding="async"
+              alt="Danities Ichaba, independent developer and founder of VibeCode Rescue"
+            />
+            <div class="photo-caption">
+              <strong>Danities Ichaba</strong
+              ><span>Founder &amp; independent developer</span>
+            </div>
+          </div>
+          <div>
+            <span class="eyebrow">The human behind the review</span>
+            <h2>
+              AI Can Write Your Code. Human Expertise Helps You Know Whether to
+              Trust It.
+            </h2>
+            <p>
+              AI coding tools make software development more accessible than
+              ever. But generating an application and understanding its
+              technical quality are two different things.
+            </p>
+            <p>
+              I’m Danities, the developer behind VibeCode Rescue. I bring
+              hands-on experience from building Adino POS, DriveMasterNG and
+              Enkaare. I independently inspect, investigate and explain
+              technical issues so you can make better decisions about your
+              product.
+            </p>
+            <p>
+              You speak directly with the person reviewing your application —
+              from the first conversation to the recommendations.
+            </p>
+            <div class="cta">
+              <a
+                class="btn"
+                href="https://wa.me/2347035545177?text=Hi%2C%20I%27d%20like%20to%20discuss%20a%20technical%20review%20of%20my%20AI-built%20app."
+                target="_blank"
+                rel="noopener"
+                >Talk to a Developer <span aria-hidden="true">↗</span></a
+              ><a
+                class="inline-link"
+                href="https://www.linkedin.com/in/danities-ichaba-50a806171/"
+                target="_blank"
+                rel="noopener"
+                >LinkedIn ↗</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq">
+        <div class="w faq-layout">
+          <div>
+            <span class="eyebrow">05 / Questions, answered</span>
+            <h2>A little clarity<br />before you start.</h2>
+            <p class="lead">Have a different question?</p>
+            <a
+              class="inline-link"
+              href="https://wa.me/2347035545177?text=Hi%2C%20I%20have%20a%20question%20about%20a%20technical%20review%20for%20my%20app."
+              target="_blank"
+              rel="noopener"
+              >Talk to a Developer ↗</a
+            >
+          </div>
+          <div class="faq">
+            <details>
+              <summary>What is a Vibe Code Health Check?</summary>
+              <p>
+                An independent human technical assessment of your AI-built
+                application. Within an agreed scope, I review implementation,
+                identify observed issues and risks, classify findings by
+                severity and provide practical next steps in plain language.
+              </p>
+            </details>
+            <details>
+              <summary>
+                My application works. Why do I need a technical review?
+              </summary>
+              <p>
+                A demo shows how an application behaves in the situations you
+                try. It may not reveal insecure permissions, fragile data
+                handling, missing error handling or deployment risks. A review
+                helps you understand these areas before you rely on the app for
+                your business.
+              </p>
+            </details>
+            <details>
+              <summary>Which AI coding platforms do you support?</summary>
+              <p>
+                Lovable, Bolt, Replit and other AI coding platforms. The review
+                focuses on the underlying code, database and integrations. Share
+                your app and stack so I can confirm a suitable scope.
+              </p>
+            </details>
+            <details>
+              <summary>Do I need to share my source code?</summary>
+              <p>
+                A preview link is enough to start the conversation. Reviewing
+                code quality, authentication, database policies and deployment
+                configuration usually requires access to the relevant source
+                code and settings. We agree on limited, appropriate access and
+                any confidentiality needs before work begins. Do not send
+                passwords or secret keys through the enquiry form.
+              </p>
+            </details>
+            <details>
+              <summary>
+                Can you fix problems discovered during the review?
+              </summary>
+              <p>
+                Yes. I can provide a separate scope and quote for fixes or
+                improvements. There is no obligation to buy repair services: you
+                can implement the recommendations yourself or use another
+                developer. The Health Check fee is credited toward Vibe Code
+                Rescue.
+              </p>
+            </details>
+            <details>
+              <summary>
+                Do you work with applications built using Lovable, Bolt and
+                Replit?
+              </summary>
+              <p>
+                Yes. Whether your app works well, has a specific problem or
+                needs more features, I can review the relevant implementation
+                and agree on the help it needs. VibeCode Rescue is independent
+                of these platforms.
+              </p>
+            </details>
+            <details>
+              <summary>How long does a technical review take?</summary>
+              <p>
+                Timing depends on application size, complexity, access and
+                review scope. We agree on a delivery timeline before the review
+                begins. I aim to reply to enquiries within 1 hour and take on a
+                maximum of one active project at a time.
+              </p>
+            </details>
+            <details>
+              <summary>
+                Do you guarantee that my application will be bug-free?
+              </summary>
+              <p>
+                No. A review identifies observed issues and risks within the
+                agreed scope. It cannot guarantee that every weakness will be
+                found, or that your application is completely secure, bug-free
+                or production-ready. Delivered fixes carry a 30-day warranty.
+              </p>
+            </details>
+            <details>
+              <summary>
+                Can I receive technical advice without hiring you for
+                development?
+              </summary>
+              <p>
+                Yes. Select general technical advice in the enquiry form or
+                message me on WhatsApp. We can discuss the question and agree on
+                any paid consultation scope before starting. You do not have to
+                commission development work.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="final" id="contact">
+        <div class="w">
+          <h2>
+            Before you trust it with your business,<br />get a human
+            perspective.
+          </h2>
+          <p class="lead">
+            Tell me about your app. Let’s agree on what to review, what you’ll
+            receive and what happens next.
+          </p>
+          <div class="cta">
+            <a class="btn p" href="#intake">Get Your App Reviewed</a
+            ><a
+              class="btn wa"
+              href="https://wa.me/2347035545177?text=Hi%2C%20I%20built%20my%20app%20with%20AI.%20I%27d%20like%20to%20discuss%20an%20independent%20technical%20review."
+              target="_blank"
+              rel="noopener"
+              >Talk to a Developer</a
+            >
+          </div>
+          <p class="reply">
+            Aim to reply within 1 hour · One active project at a time.
+          </p>
+          <p class="risk">
+            Health Check fee credited toward Rescue. 30-day warranty on
+            delivered fixes.
+          </p>
+          <form
+            class="intake card"
+            id="intake"
+            name="app-rescue"
+            method="POST"
+            action="/"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            enctype="multipart/form-data"
+          >
+            <input type="hidden" name="form-name" value="app-rescue" />
+            <p class="hidden">
+              <label
+                >Leave this empty
+                <input name="bot-field" tabindex="-1" autocomplete="off"
+              /></label>
+            </p>
+            <span class="eyebrow">Start the conversation</span>
+            <h3>Tell me about your app.</h3>
+            <p class="form-intro">
+              Working well, not quite finished or giving you trouble — you don’t
+              need to know what’s wrong to get in touch.
+            </p>
+            <div class="field">
+              <label for="name">Your name</label
+              ><input
+                id="name"
+                name="name"
+                autocomplete="name"
+                required
+                maxlength="120"
+              />
+            </div>
+            <div class="grid g2">
+              <div class="field">
+                <label for="email">Email (or use WhatsApp below)</label
+                ><input
+                  type="email"
+                  id="email"
+                  name="email"
+                  autocomplete="email"
+                />
+              </div>
+              <div class="field">
+                <label for="whatsapp">WhatsApp (or use email)</label
+                ><input
+                  type="tel"
+                  id="whatsapp"
+                  name="whatsapp"
+                  autocomplete="tel"
+                  aria-describedby="contact-help"
+                />
+              </div>
+            </div>
+            <p id="contact-help" class="disc" style="margin: 0 0 18px">
+              Provide at least one: email or WhatsApp.
+            </p>
+            <div class="field">
+              <label for="tool">Which AI tool built your app?</label
+              ><input
+                id="tool"
+                name="tool"
+                placeholder="e.g. Lovable, Bolt, Replit, or not sure"
+                required
+                maxlength="200"
+              />
+            </div>
+            <div class="field">
+              <label for="app-url">Link to your app</label
+              ><input
+                type="url"
+                id="app-url"
+                name="app-url"
+                placeholder="https://"
+                required
+              />
+            </div>
+            <div class="field">
+              <label for="service">What would you like help with?</label
+              ><select id="service" name="service" required>
+                <option value="Independent technical review">
+                  Independent technical review
+                </option>
+                <option value="Fixing an existing problem">
+                  Fixing an existing problem
+                </option>
+                <option value="Completing or improving an application">
+                  Completing or improving an application
+                </option>
+                <option value="General technical advice">
+                  General technical advice
+                </option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="problem">What would you like me to know?</label
+              ><textarea
+                id="problem"
+                name="problem"
+                required
+                maxlength="5000"
+                aria-describedby="enquiry-help"
+              ></textarea
+              ><small id="enquiry-help"
+                >Share what you want reviewed, a question or a problem you’ve
+                noticed.</small
+              >
+            </div>
+            <div class="field">
+              <label for="screenshot">Screenshot (optional)</label
+              ><input
+                type="file"
+                id="screenshot"
+                name="screenshot"
+                accept="image/png,image/jpeg,image/webp"
+                aria-describedby="upload-help"
+              /><small id="upload-help"
+                >PNG, JPG or WebP, up to 5 MB. Remove private information before
+                uploading.</small
+              >
+            </div>
+            <button class="btn p" type="submit">Get Your App Reviewed</button>
+            <p
+              class="form-status"
+              id="form-status"
+              role="status"
+              aria-live="polite"
+              tabindex="-1"
+            ></p>
+            <noscript
+              ><p class="disc">
+                Provide an email or WhatsApp number so we can reply. Netlify
+                shows confirmation after submission.
+              </p></noscript
+            >
+          </form>
+          <p class="needs">
+            <strong>What we need from you:</strong> a preview link starts the
+            conversation. Code, database and configuration access is agreed for
+            the review scope. Do not send passwords or secret keys in this form.
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="w">
+        <div class="fg">
+          <div>
+            <a class="logo" href="#top" style="color: var(--tx)"
+              ><i>&lt;/&gt;</i>VibeCode Rescue</a
+            >
+            <p style="margin-top: 12px; max-width: 300px">
+              Independent human technical review for AI-built applications. From
+              AI-generated prototype to production-ready software.
+            </p>
+          </div>
+          <div>
+            <h5>Navigate</h5>
+            <a href="#problems">The Health Check</a
+            ><a href="#process">How it works</a><a href="#work">Experience</a
+            ><a href="#faq">FAQ</a>
+          </div>
+          <div>
+            <h5>Services</h5>
+            <a href="#services">Health Check</a
+            ><a href="#services">Vibe Code Rescue</a
+            ><a href="#services">MVP Completion</a
+            ><a href="#services">Ongoing Support</a>
+          </div>
+          <div>
+            <h5>Contact</h5>
+            <a href="mailto:danitiestech@gmail.com">danitiestech@gmail.com</a
+            ><a href="tel:+2347035545177">0703 554 5177</a
+            ><a
+              href="https://www.linkedin.com/in/danities-ichaba-50a806171/"
+              target="_blank"
+              rel="noopener"
+              >LinkedIn</a
+            ><a
+              href="https://wa.me/2347035545177?text=Hi%2C%20I%20built%20my%20app%20with%20AI.%20I%27d%20like%20to%20discuss%20an%20independent%20technical%20review."
+              target="_blank"
+              rel="noopener"
+              >WhatsApp</a
+            >
+          </div>
+        </div>
+        <div class="copy">
+          © 2026 VibeCode Rescue. All rights reserved. Independent service, not
+          affiliated with Lovable, Bolt.new, Replit or Paystack.
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        var bn = document.getElementById("bn"),
+          bu = document.getElementById("bu");
+        function set(u) {
+          bn.classList.toggle("on", !u);
+          bu.classList.toggle("on", u);
+          bn.setAttribute("aria-pressed", String(!u));
+          bu.setAttribute("aria-pressed", String(u));
+          document.querySelectorAll(".pr").forEach(function (e) {
+            e.textContent = u ? e.dataset.u : e.dataset.n;
+          });
+        }
+        bn.onclick = function () {
+          set(false);
+        };
+        bu.onclick = function () {
+          set(true);
+        };
+      })();
+    </script>
+    <script>
+      (function () {
+        var form = document.getElementById("intake"),
+          email = document.getElementById("email"),
+          phone = document.getElementById("whatsapp"),
+          file = document.getElementById("screenshot"),
+          status = document.getElementById("form-status"),
+          button = form.querySelector("button");
+        function checkContact() {
+          phone.setCustomValidity(
+            email.value.trim() || phone.value.trim()
+              ? ""
+              : "Please provide an email or WhatsApp number.",
+          );
+        }
+        document.querySelectorAll("[data-service]").forEach(function (link) {
+          link.addEventListener("click", function () {
+            document.getElementById("service").value = link.dataset.service;
+          });
+        });
+        email.addEventListener("input", checkContact);
+        phone.addEventListener("input", checkContact);
+        checkContact();
+        file.addEventListener("change", function () {
+          file.setCustomValidity(
+            file.files[0] && file.files[0].size > 5 * 1024 * 1024
+              ? "Choose a screenshot smaller than 5 MB."
+              : "",
+          );
+        });
+        form.addEventListener("submit", async function (event) {
+          event.preventDefault();
+          if (button.disabled) return;
+          checkContact();
+          if (!form.reportValidity()) return;
+          button.disabled = true;
+          button.textContent = "Sending…";
+          status.classList.remove("error");
+          status.textContent = "Sending your request…";
+          try {
+            var response = await fetch("/", {
+              method: "POST",
+              body: new FormData(form),
+            });
+            if (!response.ok) throw new Error("Submission failed");
+            form.reset();
+            file.setCustomValidity("");
+            checkContact();
+            status.textContent =
+              "Thanks — your enquiry has been received. I’ll reply using the contact details you provided.";
+            status.focus();
+          } catch (error) {
+            status.classList.add("error");
+            status.textContent =
+              "Your request could not be confirmed. Please try again, or use the WhatsApp button above. Your details are still in the form.";
+            status.focus();
+          } finally {
+            button.disabled = false;
+            button.textContent = "Get Your App Reviewed";
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>
